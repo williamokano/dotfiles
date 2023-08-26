@@ -1,2 +1,2 @@
 # dotfiles
-Configs and dotfiles
+Just my `.config` folder and some dotfiles.
