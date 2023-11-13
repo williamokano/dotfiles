@@ -36,4 +36,18 @@ lsp.on_attach(function(client, bufnr)
 	vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end)
 
+lsp.configure('yamlls', {
+    filetypes = { 'yaml', 'yaml.docker-compose', 'yml' },
+    settings = {
+        yaml = {
+            format = {
+                enable = true,
+            },
+            schemaStore = {
+                enable = true,
+            },
+        },
+    },
+})
+
 lsp.setup()

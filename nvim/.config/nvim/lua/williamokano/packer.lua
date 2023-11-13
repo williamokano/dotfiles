@@ -22,7 +22,7 @@ return require('packer').startup(function(use)
   })
   use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
 
-  use('theprimeagen/harpoon')
+--  use('theprimeagen/harpoon')
   
   use('mbbill/undotree')
   
@@ -43,4 +43,8 @@ return require('packer').startup(function(use)
 		  {'L3MON4D3/LuaSnip'},     -- Required
 	  }
   }
+
+  use('m4xshen/autoclose.nvim')
+
+  use('christoomey/vim-tmux-navigator')
 end)
