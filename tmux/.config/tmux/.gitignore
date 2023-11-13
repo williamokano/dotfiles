@@ -1,0 +1,2 @@
+# Ignore the tmux plugins as it will be installed again by tpm
+plugins
