@@ -19,5 +19,5 @@ vim.keymap.set('n', '<leader>ci', function()
     return ""
 end)
 
-vim.keymap.set({'i', 'v', 'x'}, '<leader>y', '"+y')
+vim.keymap.set({'v', 'x'}, '<leader>y', '"+y')
 vim.keymap.set('n', '<leader>yy', '<Esc>"+yy')

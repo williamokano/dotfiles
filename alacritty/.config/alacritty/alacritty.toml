@@ -1,0 +1,13 @@
+[font]
+size = 14.0
+
+[font.normal]
+family = "FiraCode Nerd Font"
+
+[window.padding]
+x = 4
+y = 4
+
+[[keyboard.bindings]]
+key = "NumpadEnter"
+chars = "\r"
