@@ -19,5 +19,23 @@ vim.keymap.set('n', '<leader>ci', function()
     return ""
 end)
 
+
+vim.keymap.set('n', '<leader>jr', function()
+    local current_word = vim.fn.expand('<cWORD>')
+
+    -- Jira URL pattern
+    local jira_pattern = 'https://jira%.%w+%.com/browse/(%w+%-%d+)'
+
+    -- Check if the current word matches the Jira pattern
+    local jira_id = string.match(current_word, jira_pattern)
+
+    if jira_id then
+        -- Create the replacement
+        local new_string = string.format('[%s](%s)', jira_id, current_word)
+
+        -- Replace the current word with the new string
+        vim.api.nvim_command('normal! ciW' .. new_string)
+    end
+end)
 vim.keymap.set({'v', 'x'}, '<leader>y', '"+y')
 vim.keymap.set('n', '<leader>yy', '<Esc>"+yy')
