@@ -39,3 +39,16 @@ vim.keymap.set('n', '<leader>jr', function()
 end)
 vim.keymap.set({'v', 'x'}, '<leader>y', '"+y')
 vim.keymap.set('n', '<leader>yy', '<Esc>"+yy')
+
+vim.api.nvim_create_autocmd("BufEnter", {
+    pattern = "*",
+    callback = function()
+        if vim.fn.argc() > 0 then
+            local file_dir = vim.fn.fnamemodify(vim.fn.argv(0), ":p:h")
+            vim.cmd("lcd" .. file_dir)
+            vim.api.nvim_del_autocmd(vim.api.nvim_get_autocmds({ group = "SetInitialCWD" })[1].id)
+        end
+    end,
+    group = vim.api.nvim_create_augroup("SetInitialCWD", { clear = true })
+})
+
