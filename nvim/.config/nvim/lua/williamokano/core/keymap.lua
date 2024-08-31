@@ -23,3 +23,32 @@ keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" }) --  
 keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" }) --  go to previous tab
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
 
+-- My custom keymaps
+-- change inner until character on both sides
+vim.keymap.set("n", "<leader>ci", function()
+  local key = vim.fn.nr2char(vim.fn.getchar())
+  local command = "T" .. key .. "dt" .. key .. "i"
+  local feedkeysstr = vim.api.nvim_replace_termcodes(command, true, true, true)
+  vim.api.nvim_feedkeys(feedkeysstr, "n", true)
+
+  return ""
+end)
+
+-- Jira URL to markdown replacer
+vim.keymap.set("n", "<leader>jr", function()
+  local current_word = vim.fn.expand("<cWORD>")
+
+  -- Jira URL pattern
+  local jira_pattern = "https://jira%.%w+%.com/browse/(%w+%-%d+)"
+
+  -- Check if the current word matches the Jira pattern
+  local jira_id = string.match(current_word, jira_pattern)
+
+  if jira_id then
+    -- Create the replacement
+    local new_string = string.format("[%s](%s)", jira_id, current_word)
+
+    -- Replace the current word with the new string
+    vim.api.nvim_command("normal! ciW" .. new_string)
+  end
+end)
