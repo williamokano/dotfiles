@@ -1,4 +1,5 @@
 # dotfiles
+
 Just my `.config` folder and some dotfiles.
 
 To enabled it just run `stow [package name]` by `[package name]` being the folder name
@@ -6,9 +7,12 @@ To enabled it just run `stow [package name]` by `[package name]` being the folde
 ## Packages
 
 Current active packages are:
+
 - alacritty
 - tmux
 - nvim
 
 Deprecated package:
-- nvim-nvchad (still works just fine, just didn't want to have any "distribution")
+
+- nvim-nvchad (still works just fine)
+- nvim-typecraft (works just fine, it's just incomplete)
