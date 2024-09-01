@@ -52,13 +52,12 @@ return {
       incremental_selection = {
         enable = true,
         keymaps = {
-          init_selection = "<C-S-Space>",
-          node_incremental = "<C-S-Space>",
+          init_selection = "P",
+          node_incremental = "P",
           scope_incremental = false,
-          node_decremental = "<BS>",
+          node_decremental = "<bs>",
         },
       },
     })
   end,
 }
-
