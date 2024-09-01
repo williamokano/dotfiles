@@ -24,6 +24,9 @@ keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" }) 
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
 
 -- My custom keymaps
+-- Insert new line ignoring everything else (ctrl + enter in VSCODE)
+vim.keymap.set("i", "<S-CR>", "<C-o>o", { noremap = true, silent = true })
+
 -- change inner until character on both sides
 vim.keymap.set("n", "<leader>ci", function()
   local key = vim.fn.nr2char(vim.fn.getchar())

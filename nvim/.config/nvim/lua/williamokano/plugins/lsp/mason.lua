@@ -42,6 +42,7 @@ return {
         "kotlin_language_server",
         "jdtls",
         "bashls",
+        "terraformls",
       },
     })
     mason_tool_installer.setup({
@@ -55,6 +56,7 @@ return {
         "rustfmt",
         "pylint",
         "eslint_d",
+        "tflint",
       },
     })
   end,
