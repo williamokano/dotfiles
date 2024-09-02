@@ -22,3 +22,27 @@ key = "Return"
 mods = "Control"
 chars = "\u001B[13;5u"
 
+[[keyboard.bindings]]
+key = "F"
+mods = "Alt"
+chars = "\u001Bf"
+# Moves the cursor forward one word when Option + F is pressed.
+
+[[keyboard.bindings]]
+key = "B"
+mods = "Alt"
+chars = "\u001Bb"
+# Moves the cursor backward one word when Option + B is pressed.
+
+[[keyboard.bindings]]
+key = "D"
+mods = "Alt"
+chars = "\u001Bd"
+# Deletes the word after the cursor when Option + D is pressed.
+
+[[keyboard.bindings]]
+key = "Back"
+mods = "Alt"
+chars = "\u001B\u007F"
+# Deletes the word before the cursor when Option + Backspace is pressed.
+
