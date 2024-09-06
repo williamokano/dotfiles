@@ -46,8 +46,4 @@ mods = "Alt"
 chars = "\u001B\u007F"
 # Deletes the word before the cursor when Option + Backspace is pressed.
 
-[[keyboard.bindings]]
-key = "V"
-mods = "Control"
-action = "Paste"
 
