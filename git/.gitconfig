@@ -1,0 +1,5 @@
+[user]
+	name = William Okano
+	email = williamokano@gmail.com
+[core]
+	excludesFile = /home/william/.gitignore

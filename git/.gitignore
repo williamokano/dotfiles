@@ -1,0 +1,4 @@
+# Globally ignore folders
+
+# IntelliJ folder
+.idea
