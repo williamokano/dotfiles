@@ -5,14 +5,20 @@ return {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
   },
   config = function()
-    -- import mason
-    local mason = require("mason")
+    local function has(cmd)
+      return vim.fn.executable(cmd) == 1
+    end
 
-    -- import mason-lspconfig
+    local function extend(dst, src)
+      for _, v in ipairs(src) do
+        table.insert(dst, v)
+      end
+    end
+
+    local mason = require("mason")
     local mason_lspconfig = require("mason-lspconfig")
     local mason_tool_installer = require("mason-tool-installer")
 
-    -- enable mason and configure icons
     mason.setup({
       ui = {
         icons = {
@@ -23,41 +29,66 @@ return {
       },
     })
 
-    mason_lspconfig.setup({
-      -- list of servers for mason to install
-      ensure_installed = {
-        "ts_ls",
+    -- ======================
+    -- LSP servers
+    -- ======================
+    local lsp_servers = {
+      "lua_ls",
+      "terraformls",
+    }
+
+    if has("node") then
+      extend(lsp_servers, {
+        "tsserver",
         "html",
         "cssls",
         "tailwindcss",
-        "svelte",
-        "lua_ls",
+        "bashls",
+        "pyright",
         "graphql",
         "emmet_ls",
-        "prismals",
-        "pyright",
-        "gopls",
-        "rust_analyzer",
-        "elixirls",
-        "kotlin_language_server",
-        "jdtls",
-        "bashls",
-        "terraformls",
-      },
+      })
+    end
+
+    if has("go") then
+      extend(lsp_servers, { "gopls" })
+    end
+
+    if has("rustc") then
+      extend(lsp_servers, { "rust_analyzer" })
+    end
+
+    mason_lspconfig.setup({
+      ensure_installed = lsp_servers,
+      automatic_installation = true,
     })
+
+    -- ======================
+    -- Tools (formatters etc)
+    -- ======================
+    local tools = {
+      "stylua",
+      "tflint",
+    }
+
+    if has("node") then
+      extend(tools, { "prettier", "eslint_d" })
+    end
+
+    if has("python3") then
+      extend(tools, { "black", "isort", "pylint" })
+    end
+
+    if has("go") then
+      extend(tools, { "goimports" })
+    end
+
+    if has("rustc") then
+      extend(tools, { "rustfmt" })
+    end
+
     mason_tool_installer.setup({
-      ensure_installed = {
-        "prettier",
-        "stylua",
-        "isort",
-        "black",
-        "ktlint",
-        "goimports",
-        "rustfmt",
-        "pylint",
-        "eslint_d",
-        "tflint",
-      },
+      ensure_installed = tools,
     })
   end,
 }
