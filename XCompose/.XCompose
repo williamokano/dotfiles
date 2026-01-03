@@ -4,3 +4,5 @@ include "/usr/share/X11/locale/en_US.UTF-8/Compose"
 <dead_acute> <c> : "ç" ccedilla # LATIN SMALL LETTER C WITH CEDILL
 <dead_acute> <s> : "'s"
 <dead_acute> <S> : "'S"
+<dead_acute> <t> : "'t"
+<dead_acute> <T> : "'T"
