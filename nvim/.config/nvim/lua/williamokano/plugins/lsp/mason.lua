@@ -39,7 +39,7 @@ return {
 
     if has("node") then
       extend(lsp_servers, {
-        "tsserver",
+        "ts_ls",
         "html",
         "cssls",
         "tailwindcss",

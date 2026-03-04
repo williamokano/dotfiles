@@ -1,5 +1,22 @@
 [user]
 	name = William Okano
 	email = williamokano@gmail.com
+[push]
+	autoSetupRemote = true
+[pull]
+	rebase = true
+[rerere]
+	enabled = true
 [core]
-	excludesFile = /home/william/.gitignore
+	editor = nvim
+	excludesFile = ~/.gitignore
+[alias]
+	lol = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+[init]
+	defaultBranch = main
+[includeIf "gitdir:~/Workspace/GenAI/"]
+	path = ~/.gitconfig-work
+[includeIf "gitdir:~/Workspace/Grammarly/"]
+	path = ~/.gitconfig-work
+[includeIf "gitdir:~/Workspace/Growth/"]
+	path = ~/.gitconfig-work
