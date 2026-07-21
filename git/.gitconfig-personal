@@ -1,5 +1,4 @@
-# Personal identity. Copied to ~/.gitconfig-personal (not stowed) so it
-# can diverge per machine without touching the repo.
+# Personal identity, stowed to ~/.gitconfig-personal.
 # Loaded for repos under ~/Personal/ (see includeIf in .gitconfig).
 [user]
 	name = William Okano

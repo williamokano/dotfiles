@@ -6,10 +6,6 @@
 \.git
 /bin/git-deps
 
-# Identity examples: copy them to ~ and fill in, don't stow them
-\.gitconfig-work
-\.gitconfig-personal
-
 .*,v
 RCS
 CVS

@@ -1,5 +1,4 @@
-# Work identity. Copied to ~/.gitconfig-work (not stowed) so it can
-# diverge per machine/employer without touching the repo.
+# Work identity, stowed to ~/.gitconfig-work.
 # Loaded for repos under ~/Workspace/ (see includeIf in .gitconfig).
 [user]
 	name = William Okano
