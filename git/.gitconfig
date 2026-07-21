@@ -1,6 +1,3 @@
-[user]
-	name = William Okano
-	email = williamokano@gmail.com
 [push]
 	autoSetupRemote = true
 [pull]
@@ -14,9 +11,7 @@
 	lol = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 [init]
 	defaultBranch = main
-[includeIf "gitdir:~/Workspace/GenAI/"]
+[includeIf "gitdir:~/Workspace/"]
 	path = ~/.gitconfig-work
-[includeIf "gitdir:~/Workspace/Grammarly/"]
-	path = ~/.gitconfig-work
-[includeIf "gitdir:~/Workspace/Growth/"]
-	path = ~/.gitconfig-work
+[includeIf "gitdir:~/Personal/"]
+	path = ~/.gitconfig-personal

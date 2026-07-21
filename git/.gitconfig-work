@@ -1,2 +1,9 @@
+# Work identity. Copied to ~/.gitconfig-work (not stowed) so it can
+# diverge per machine/employer without touching the repo.
+# Loaded for repos under ~/Workspace/ (see includeIf in .gitconfig).
 [user]
-	email = william.okano@grammarly.com
+	name = William Okano
+	email = william.okano@qonto.com
+
+[core]
+	sshCommand = "ssh -i ~/.ssh/id_ed25519 -o IdentitiesOnly=yes"

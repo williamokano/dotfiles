@@ -1,0 +1,9 @@
+# Personal identity. Copied to ~/.gitconfig-personal (not stowed) so it
+# can diverge per machine without touching the repo.
+# Loaded for repos under ~/Personal/ (see includeIf in .gitconfig).
+[user]
+	name = William Okano
+	email = williamokano@gmail.com
+
+[core]
+	sshCommand = "ssh -i ~/.ssh/id_ed25519_pvt -o IdentitiesOnly=yes"
